@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product managmnet system</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/all.min.css">
+
+</head>
+
+
+<body>
+    <div class="container ">
+
+        <div class="w-75 mx-auto py-5">
+            <h2 class="pb-5"> Prouduct Managment System </h2>
+            <div class="form-group mb-3">
+                <label for="productName" class="mb-2">Product Name</label>
+                <input oninput="ValidateProductName() " type="text" class="form-control" id="productName"
+                    placeholder="Enter product name" required>
+                <p class="text-danger d-none" id="wrongname">Invalid name (Start with capital letter)</p>
+            </div>
+            <div class="form-group mb-3">
+                <label for="productPrice">Product Price</label>
+                <input oninput="ValidateProductPrice() " type="number" class="form-control" id="productPrice"
+                    placeholder="Enter product price" step="0.01" required>
+                <p class="text-danger d-none" id="wrongprice">Enter numbers between 1000-100000</p>
+
+            </div>
+            <div class="form-group mb-3"><label for="productModel">Product Model</label>
+                <input oninput="ValidateProductModel()" type="text" class="form-control" id="productModel"
+                    placeholder="Enter product model" required>
+            </div>
+            <div class="form-group mb-3"><label for="productDescription">Product Description</label>
+                <textarea oninput="ValidateProductDescription()" class="form-control" id="productDescription" rows="4"
+                    placeholder="Enter product description" required></textarea>
+
+                <p class="text-danger d-none" id="wrongdesc">minmum charchters 120 </p>
+
+            </div>
+
+
+            <button onclick="addproduct()" id="AddProductBtn" class="btn btn-outline-primary">Add product</button>
+            <button onclick="Update()" id="UpdateProductBtn" class="btn d-none btn-outline-warning">Update
+                product</button>
+            <br>
+            <input class="rounded-2 mt-3" oninput="search(this.value)" type="search" id="searchInput"
+                placeholder="Search...">
+        </div>
+        <table class="table text-white text-center w-75 mx-auto">
+            <thead>
+                <th>index</th>
+                <th>name</th>
+                <th>price</th>
+                <th>model</th>
+                <th>desc</th>
+                <th>Update</th>
+                <th>delete</th>
+            </thead>
+
+            <tbody id="tbody">
+                <tr>
+                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button class=" btn btn-sm btn-warning">Update</button></td>
+                    <td><button class=" btn btn-sm btn-danger">Delete</button></td>
+                </tr>
+
+            </tbody>
+
+
+        </table>
+    </div>
+
+
+    <script src="js/main.js"></script>
+
+
+
+</body>
+
+</html>
